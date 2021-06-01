@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { storage } from "utils";
+import Home from 'pages/Home'
 import './App.css'
 
 
@@ -33,7 +34,9 @@ class App extends React.Component {
           </ul>
         </div>
         <Switch>
-          <Route path="/"></Route>
+          <Route path="/">
+
+          </Route>
         </Switch>
       </Router>
     )
