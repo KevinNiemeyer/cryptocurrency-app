@@ -3,19 +3,22 @@ import styled from 'styled-components';
 import { LI, P, Block } from './CoinRow.styles';
 
 const CoinRow = (props) => {
-  const IMG = styled.image`
-    height: 99999px;
-    object-fit: contain;
-    max-height: 100%;
-    max-width: 100%;
-    display: block;
-    margin: auto auto;
+  const IMG = styled.div`
+    text-align: center;
+    width: 2em;
+    height: 2em; /* Set height */
+    margin: 0px;
+    padding: 0px;
+    background-image: url(${props.image});
+    background-size: cover; /* Scaling down large image to a div */
+    background-repeat: no-repeat;
+    background-position: center;
   `;
   return (
     <LI>
       <P>{props.market_cap_rank}</P>
       <Block>
-        <IMG src={props.image} alt="none" />
+        <IMG />
         <P>{props.name}</P>
         <P>{props.symbol.toUpperCase()}</P>
       </Block>
