@@ -18,7 +18,7 @@ export const LI = styled.li`
   background: darkgrey;
   padding: 1em;
   display: grid;
-  grid-template-columns: 11.1% 11.1% 11.1% 11.1% 11.1% 11.1% 11.1% 11.1% 11.1%;
+  grid-template-columns: 9% 10% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57%;
   align-items: center;
 `;
 
