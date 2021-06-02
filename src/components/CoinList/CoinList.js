@@ -47,6 +47,7 @@ class CoinList extends React.Component {
               price_change_percentage_24h_in_currency,
               price_change_percentage_7d_in_currency,
               total_volume,
+              market_cap_rank,
             } = coin;
 
             return (
@@ -56,7 +57,7 @@ class CoinList extends React.Component {
                 name={name}
                 market_cap={market_cap}
                 current_price={current_price}
-                price_change_percentage_24h={
+                price_change_percentage_24h_in_currency={
                   price_change_percentage_24h_in_currency
                 }
                 price_change_percentage_1h_in_currency={
@@ -67,6 +68,7 @@ class CoinList extends React.Component {
                 }
                 total_volume={total_volume}
                 image={image}
+                market_cap_rank={market_cap_rank}
               />
             );
           })}

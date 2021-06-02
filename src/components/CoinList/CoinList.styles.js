@@ -13,13 +13,16 @@ export const UL = styled.ul`
 
 export const LI = styled.li`
   width: 100%;
-  margin: 5rem auto;
+  margin: 0.5rem auto;
   width: 90%;
+  background: darkgrey;
+  padding: 1em;
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: 11.1% 11.1% 11.1% 11.1% 11.1% 11.1% 11.1% 11.1% 11.1%;
   align-items: center;
 `;
 
 export const P = styled.p`
   text-align: center;
+  font-weight: 700;
 `;
