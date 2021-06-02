@@ -23,7 +23,6 @@ class CoinList extends React.Component {
     const { coinList } = this.state;
     return (
       <Container>
-        Coin List Component
         <UL>
           <LI>
             <P>Rank</P>

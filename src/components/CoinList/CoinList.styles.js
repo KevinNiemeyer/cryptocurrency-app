@@ -15,14 +15,14 @@ export const LI = styled.li`
   width: 100%;
   margin: 0.5rem auto;
   width: 90%;
-  background: darkgrey;
-  padding: 1em;
+  color: SteelBlue;
+  background: Black;
+  padding: 2em 1em 0.5em 1em;
   display: grid;
-  grid-template-columns: 9% 10% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57%;
-  align-items: center;
+  grid-template-columns: 7% 12% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57%;
+  align-items: end;
 `;
 
 export const P = styled.p`
-  text-align: center;
   font-weight: 700;
 `;

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
+
 
 // reset:
 html, body, div, span, applet, object, iframe,
@@ -30,7 +31,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'Helvetica'
+	font-family: 'Helvetica';
+	color: black;
+	background: steelblue;
 }
 ol, ul {
 	list-style: none;
@@ -48,3 +51,5 @@ table {
 	border-spacing: 0;
 }
 `;
+
+export default GlobalStyle;

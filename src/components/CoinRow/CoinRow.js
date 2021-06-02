@@ -27,7 +27,7 @@ const CoinRow = (props) => {
       <P>{props.price_change_percentage_7d_in_currency}</P>
       <P>{props.total_volume}</P>
       <P>{props.market_cap}</P>
-      <P>adsf</P>
+      <P>Graph Coming Soon</P>
     </LI>
   );
 };
