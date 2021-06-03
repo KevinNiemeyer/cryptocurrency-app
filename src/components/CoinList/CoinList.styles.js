@@ -15,7 +15,7 @@ export const LI = styled.li`
   width: 100%;
   margin: 0.5rem auto;
   width: 90%;
-  color: SteelBlue;
+  color: #75daf7;
   background: Black;
   padding: 2em 1em 0.5em 1em;
   display: grid;

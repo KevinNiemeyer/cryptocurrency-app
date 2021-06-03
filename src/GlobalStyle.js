@@ -33,7 +33,7 @@ body {
 	line-height: 1;
 	font-family: 'Helvetica';
 	color: black;
-	background: steelblue;
+	background: #000000ff;
 }
 ol, ul {
 	list-style: none;

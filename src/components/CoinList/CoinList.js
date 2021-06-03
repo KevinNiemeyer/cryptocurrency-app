@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { UL, LI, P, Container } from './CoinList.styles';
-import { storage } from 'utils';
+import { storage, round } from 'utils';
 import { CoinRow } from 'components';
 
 class CoinList extends React.Component {
@@ -10,7 +10,7 @@ class CoinList extends React.Component {
   };
   getData = async () => {
     const data = await axios(
-      `${process.env.REACT_APP_API_ENDPOINT}coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C`
+      `${process.env.REACT_APP_API_ENDPOINT}coins/markets?vs_currency=USD&order=market_cap_desc&per_page=25&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C`
     );
 
     this.setState({ coinList: data.data });
@@ -48,24 +48,22 @@ class CoinList extends React.Component {
               total_volume,
               market_cap_rank,
             } = coin;
-
+            const currentPrice = round(current_price, 2);
+            const pcp1h = round(price_change_percentage_1h_in_currency, 1);
+            const pcp24h = round(price_change_percentage_24h_in_currency, 1);
+            const pcp7d = round(price_change_percentage_7d_in_currency, 1);
+            const totalVolume = round(total_volume, 0);
+            const marketCap = round(market_cap, 0);
             return (
               <CoinRow
-                rank={index}
                 symbol={symbol}
                 name={name}
-                market_cap={market_cap}
-                current_price={current_price}
-                price_change_percentage_24h_in_currency={
-                  price_change_percentage_24h_in_currency
-                }
-                price_change_percentage_1h_in_currency={
-                  price_change_percentage_1h_in_currency
-                }
-                price_change_percentage_7d_in_currency={
-                  price_change_percentage_7d_in_currency
-                }
-                total_volume={total_volume}
+                market_cap={marketCap}
+                current_price={currentPrice}
+                price_change_percentage_24h_in_currency={pcp24h}
+                price_change_percentage_1h_in_currency={pcp1h}
+                price_change_percentage_7d_in_currency={pcp7d}
+                total_volume={totalVolume}
                 image={image}
                 market_cap_rank={market_cap_rank}
               />
