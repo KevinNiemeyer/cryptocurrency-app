@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import { UL, LI, P, Container } from './CoinList.styles';
 import { storage, round } from 'utils';
 import { CoinRow } from 'components';
+
 
 class CoinList extends React.Component {
   state = {
@@ -24,17 +26,19 @@ class CoinList extends React.Component {
     return (
       <Container>
         <UL>
-          <LI>
-            <P>Rank</P>
-            <P>Coin</P>
-            <P>Price</P>
-            <P>1hr</P>
-            <P>24hr</P>
-            <P>7 days</P>
-            <P>24hr Volume</P>
-            <P>Market Cap</P>
-            <P>Last 7 Days</P>
-          </LI>
+            <LI>
+          <Link to=''>
+              <P>Rank</P>
+              <P>Coin</P>
+              <P>Price</P>
+              <P>1hr</P>
+              <P>24hr</P>
+              <P>7 days</P>
+              <P>24hr Volume</P>
+              <P>Market Cap</P>
+              <P>Last 7 Days</P>
+            </LI>
+          </Link>
           {coinList.map((coin, index) => {
             const {
               symbol,

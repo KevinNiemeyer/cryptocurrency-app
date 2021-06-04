@@ -1,9 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { storage } from 'utils';
 import GlobalStyle from './GlobalStyle';
-import { Home } from 'pages';
+import { Home, CoinPage } from 'pages';
 
 import './App.css';
 
@@ -14,9 +12,10 @@ class App extends React.Component {
         <GlobalStyle />
         <div>
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/coin/:name" component={CoinPage}></Route>
           </Switch>
         </div>
       </Router>

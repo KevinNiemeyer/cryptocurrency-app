@@ -11,4 +11,4 @@ Global coins info:
 https://api.coingecko.com/api/v3/global
 
 questions:
-How do I create one main math folder, and export the functions out of it to be used individually?
+How do I have the data update real time?
