@@ -1,10 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 import { UL, LI, P, Container } from './CoinList.styles';
-import { storage, round } from 'utils';
+import { round } from 'utils';
 import { CoinRow } from 'components';
-
 
 class CoinList extends React.Component {
   state = {
@@ -26,21 +24,20 @@ class CoinList extends React.Component {
     return (
       <Container>
         <UL>
-            <LI>
-          <Link to=''>
-              <P>Rank</P>
-              <P>Coin</P>
-              <P>Price</P>
-              <P>1hr</P>
-              <P>24hr</P>
-              <P>7 days</P>
-              <P>24hr Volume</P>
-              <P>Market Cap</P>
-              <P>Last 7 Days</P>
-            </LI>
-          </Link>
+          <LI>
+            <P>Rank</P>
+            <P>Coin</P>
+            <P>Price</P>
+            <P>1hr</P>
+            <P>24hr</P>
+            <P>7 days</P>
+            <P>24hr Volume</P>
+            <P>Market Cap</P>
+            <P>Last 7 Days</P>
+          </LI>
           {coinList.map((coin, index) => {
             const {
+              id,
               symbol,
               name,
               market_cap,
@@ -51,6 +48,7 @@ class CoinList extends React.Component {
               price_change_percentage_7d_in_currency,
               total_volume,
               market_cap_rank,
+              url,
             } = coin;
             const currentPrice = round(current_price, 2);
             const pcp1h = round(price_change_percentage_1h_in_currency, 1);
@@ -60,6 +58,7 @@ class CoinList extends React.Component {
             const marketCap = round(market_cap, 0);
             return (
               <CoinRow
+                id={id}
                 symbol={symbol}
                 name={name}
                 market_cap={marketCap}
@@ -70,6 +69,7 @@ class CoinList extends React.Component {
                 total_volume={totalVolume}
                 image={image}
                 market_cap_rank={market_cap_rank}
+                url={url}
               />
             );
           })}
