@@ -33,7 +33,7 @@ export const DropDownBtn = styled.div`
     -webkit-transform: rotate(45deg);
   }
 `;
-
+//how do I make this div fit to the content inside so the words aren't overlapping?
 export const Wrapper = styled.div`
   color: antiquewhite;
   margin-top: 3%;
