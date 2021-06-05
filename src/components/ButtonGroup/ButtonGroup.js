@@ -56,37 +56,40 @@ const ButtonGroup = (props) => (
         Crypto.com DeFi Wallet
       </StyledButton>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Ledger
       </StyledButton>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Trezor
       </StyledButton>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Electrum
       </StyledButton>
     </Row>
     Community
     <Row>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Reddit
       </StyledButton>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Twitter
       </StyledButton>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Facebook
+      </StyledButton>
+      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+        bitcointalk.org
       </StyledButton>
     </Row>
     Source Code
     <Row>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Github
       </StyledButton>
     </Row>
     Tags
     <Row>
       <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
-        Buy / Sell &#x25BC;
+        Cryptocurrency
       </StyledButton>
     </Row>
   </Container>
