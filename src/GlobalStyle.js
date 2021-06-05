@@ -3,10 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
 
-// reset:
 * {
 	//outline: solid 1px yellow;
 }
+
+// reset:
+
 *,
 *::before,
 *::after {

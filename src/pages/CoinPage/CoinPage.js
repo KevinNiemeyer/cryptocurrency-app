@@ -16,7 +16,6 @@ class CoinPage extends React.Component {
     const data = await axios(
       `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
     );
-    console.log(data);
     this.setState({
       name: data.data.name,
       image: data.data.image,
@@ -28,7 +27,6 @@ class CoinPage extends React.Component {
     this.getData();
   }
   render() {
-    console.log(`rank: ${this.state.rank}`);
     return (
       <Container>
         {/*need to make this its own component, but not sure how routing will work*/}
