@@ -7,7 +7,7 @@ export const StyledBlock = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: ${(props) =>
-    props.big ? '30% 30% 30%' : '25% 37.5% 37.5%'};
+    props.big ? '25% 35% 25%' : '25% 37.5% 37.5%'};
   border: solid #15261cff 1px;
   font-size: ${(props) => (props.big ? '3rem' : '1rem')};
 `;
