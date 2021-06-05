@@ -4,6 +4,14 @@ const GlobalStyle = createGlobalStyle`
 
 
 // reset:
+* {
+	//outline: solid 1px yellow;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -34,6 +42,7 @@ body {
 	font-family: 'Helvetica';
 	color: black;
 	background: #000000ff;
+	min-height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -50,6 +59,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-`;
 
+`;
 export default GlobalStyle;

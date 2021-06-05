@@ -35,7 +35,7 @@ class CoinList extends React.Component {
             <P>Market Cap</P>
             <P>Last 7 Days</P>
           </LI>
-          {coinList.map((coin, index) => {
+          {coinList.map((coin) => {
             const {
               id,
               symbol,

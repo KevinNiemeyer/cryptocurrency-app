@@ -11,7 +11,7 @@ const CoinRow = (props) => {
           name={props.name}
           image={props.image}
           symbol={props.symbol}
-          size="1rem"
+          big={false}
         />
         <p>${props.current_price}</p>
         <p>{props.price_change_percentage_1h_in_currency}%</p>

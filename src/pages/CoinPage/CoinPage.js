@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import CoinHeader from 'components/CoinHeader';
+import CoinCard from 'components/CoinCard';
+import CoinStats from 'components/CoinStats';
 
 import { Container, Breadcrumb, StyledLink, Wrapper } from './CoinPage.styles';
 
@@ -15,31 +16,33 @@ class CoinPage extends React.Component {
     const data = await axios(
       `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
     );
+    console.log(data);
     this.setState({
       name: data.data.name,
       image: data.data.image,
       symbol: data.data.symbol,
+      rank: data.data.coingecko_rank,
     });
   };
   componentDidMount() {
     this.getData();
   }
   render() {
-    console.log(this.state);
+    console.log(`rank: ${this.state.rank}`);
     return (
       <Container>
         {/*need to make this its own component, but not sure how routing will work*/}
         <Breadcrumb>
           <StyledLink to="/">Coins</StyledLink>
           {` > ${this.props.match.params.name}`}
-          &#x25BC;
         </Breadcrumb>
         <Wrapper>
-          <CoinHeader
+          <CoinCard
             name={this.state.name}
             image={this.state.image.large}
             symbol={this.state.symbol}
-            size="3rem"
+            rank={this.state.rank}
+            big={true}
           />
         </Wrapper>
       </Container>
