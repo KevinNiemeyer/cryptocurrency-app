@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { UL, LI, P, Container } from './CoinList.styles';
 import { round } from 'utils';
 import { CoinRow } from 'components';
+import { UL, LI, P, Container } from './CoinList.styles';
 
 class CoinList extends React.Component {
   state = {
@@ -58,6 +58,7 @@ class CoinList extends React.Component {
             const marketCap = round(market_cap, 0);
             return (
               <CoinRow
+                key={symbol}
                 id={id}
                 symbol={symbol}
                 name={name}

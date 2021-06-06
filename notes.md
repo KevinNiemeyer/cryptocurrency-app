@@ -1,7 +1,7 @@
 To Do:
 
 1. create home page - done
-2. create single coin page - IP
+2. create single coin page - WIP
 3. create search function
 4. create sort functions
 5. create loader

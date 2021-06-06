@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { FaBluetooth } from 'react-icons/fa';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
@@ -12,6 +10,11 @@ export const Container = styled.div`
 `;
 
 export const Row = styled.div`
+  ${(props) =>
+    props.first &&
+    css`
+      margin-bottom: 2em;
+    `}
   display: flex;
   margin-left: 10px;
   align-items: center;
@@ -34,6 +37,11 @@ export const StyledButton = styled.a`
 `;
 
 export const BellWrapper = styled.div`
+  ${(props) =>
+    props.first &&
+    css`
+      margin-bottom: 2em;
+    `}
   display: flex;
   justify-content: flex-end;
 `;
@@ -47,7 +55,3 @@ export const Bell = styled.div`
   justify-content: center;
   font-size: 1.2em;
 `;
-
-export const firstRow = {
-  marginBottom: '2em',
-};

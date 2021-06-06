@@ -12,7 +12,7 @@ export const StyledBlock = styled.div`
   font-size: ${(props) => (props.big ? '3rem' : '1rem')};
 `;
 
-export const IMG = styled.div`
+export const Logo = styled.div`
   background-image: url(${(props) => props.image});
   text-align: center;
   width: 2em;

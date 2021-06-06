@@ -12,7 +12,7 @@ export const Breadcrumb = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #77f4d6;
+  color: var(--clr-primary);
 `;
 
 export const Wrapper = styled.div`
@@ -26,6 +26,3 @@ export const CoinStats = styled.div`
   width: 100%;
   color: antiquewhite;
 `;
-/*
-how do I make this div fit to the content inside so the words aren't overlapping?
-*/

@@ -4,91 +4,105 @@ import {
   StyledButton,
   BellWrapper,
   Bell,
-  firstRow,
 } from './ButtonGroup.styles';
 import { FaBell } from 'react-icons/fa';
 
 const ButtonGroup = (props) => (
   <Container>
-    <BellWrapper style={firstRow}>
+    <BellWrapper first>
       <Bell>
         <FaBell />
       </Bell>
     </BellWrapper>
-    <Row style={firstRow}>
-      <StyledButton big={true} bgColor="#77f4d6" fgColor="#003b2bff">
+    <Row first>
+      <StyledButton
+        big
+        bgColor="var(--clr-primary)"
+        fgColor="var(--clr-secondary)"
+      >
         Buy / Sell &#x25BC;
       </StyledButton>
-      <StyledButton big={true} bgColor="#77f4d6" fgColor="#003b2bff">
+      <StyledButton
+        big
+        bgColor="var(--clr-primary)"
+        fgColor="var(--clr-secondary)"
+      >
         Long / Short &#x25BC;
       </StyledButton>
-      <StyledButton big={true} bgColor="#77f4d6" fgColor="#003b2bff">
+      <StyledButton
+        big
+        bgColor="var(--clr-primary)"
+        fgColor="var(--clr-secondary)"
+      >
         Earn / Loan &#x25BC;
       </StyledButton>
     </Row>
     Market Cap
     <Row>
-      <StyledButton big={false} fgColor="#003f3cff" bgColor="darkgrey">
+      <StyledButton
+        fgColor="var(--clr-special-2)"
+        bgColor="var(--clr-special-1)"
+      >
         Rank #{props.rank}
       </StyledButton>
     </Row>
     Website
     <Row>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Bitcoin.org
       </StyledButton>
     </Row>
     Explorers
     <Row>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Blockchair
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Btc
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Tokenview
       </StyledButton>
     </Row>
     Wallets
     <Row>
-      <StyledButton big={false} bgColor="#77f4d6" fgColor="#003b2bff">
+      <StyledButton bgColor="var(--clr-primary)" fgColor="var(--clr-secondary)">
         Crypto.com DeFi Wallet
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Ledger
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Trezor
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Electrum
       </StyledButton>
     </Row>
     Community
     <Row>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Reddit
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Twitter
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Facebook
       </StyledButton>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         bitcointalk.org
       </StyledButton>
     </Row>
     Source Code
     <Row>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Github
       </StyledButton>
     </Row>
     Tags
     <Row>
-      <StyledButton big={false} bgColor="#003f3cff" fgColor="#77f4d6">
+      <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">
         Cryptocurrency
       </StyledButton>
     </Row>

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { IMG, StyledBlock, pStyles } from './CoinHeader.styles';
+import { Logo, StyledBlock, pStyles } from './CoinHeader.styles';
 
 const CoinHeader = (props) => {
   return (
     <StyledBlock size={props.size} display={props.display} big={props.big}>
-      <IMG className="spin" image={props.image} />
+      <Logo className="spin" image={props.image} />
       <p>{props.name}</p>
       <p style={pStyles}>({props.symbol.toUpperCase()})</p>
     </StyledBlock>
