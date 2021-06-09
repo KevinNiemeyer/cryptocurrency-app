@@ -17,7 +17,7 @@ https://api.coingecko.com/api/v3/global
 
 questions:
 On the CoinPage, I want to implement Breadcrumbs as a component, but not sure how to implement the routing for all pages
-On the CoinPage.styles, how do I make this div fit to the content inside so the words aren't overlapping?
+On the buttongroup.styles, I'm trying to use ThemeProvider on line 25, but it's not working out.
 
 HTML character codes:
 arrows:

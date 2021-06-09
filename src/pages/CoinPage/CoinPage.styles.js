@@ -5,7 +5,7 @@ export const Container = styled.div`
   padding: 3em 10em;
 `;
 export const Breadcrumb = styled.div`
-  color: white;
+  color: antiquewhite;
   font-size: 1.2rem;
   padding: 1em 0 3em 0;
 `;

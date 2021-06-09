@@ -22,6 +22,11 @@ export const Row = styled.div`
 
 export const StyledButton = styled.a`
   color: ${(props) => props.fgColor};
+  /*   ${(props) =>
+    props.highlight &&
+    css`
+    color: {props.theme.fg1};
+  `} */
   background: ${(props) => props.bgColor};
   cursor: pointer;
   text-decoration: none;
@@ -48,9 +53,9 @@ export const BellWrapper = styled.div`
 export const Bell = styled.div`
   padding: 0.3em;
   display: flex;
-  color: white;
+  color: antiquewhite;
   background: black;
-  border: solid 1px white;
+  border: solid 1px antiquewhite;
   border-radius: 3px;
   justify-content: center;
   font-size: 1.2em;

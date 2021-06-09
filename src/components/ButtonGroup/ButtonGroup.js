@@ -17,6 +17,7 @@ const ButtonGroup = (props) => (
     <Row first>
       <StyledButton
         big
+        highlight
         bgColor="var(--clr-primary)"
         fgColor="var(--clr-secondary)"
       >
@@ -24,6 +25,7 @@ const ButtonGroup = (props) => (
       </StyledButton>
       <StyledButton
         big
+        highlight
         bgColor="var(--clr-primary)"
         fgColor="var(--clr-secondary)"
       >
@@ -31,6 +33,7 @@ const ButtonGroup = (props) => (
       </StyledButton>
       <StyledButton
         big
+        highlight
         bgColor="var(--clr-primary)"
         fgColor="var(--clr-secondary)"
       >
@@ -66,7 +69,11 @@ const ButtonGroup = (props) => (
     </Row>
     Wallets
     <Row>
-      <StyledButton bgColor="var(--clr-primary)" fgColor="var(--clr-secondary)">
+      <StyledButton
+        highlight
+        bgColor="var(--clr-primary)"
+        fgColor="var(--clr-secondary)"
+      >
         Crypto.com DeFi Wallet
       </StyledButton>
       <StyledButton bgColor="var(--clr-secondary)" fgColor="var(--clr-primary)">

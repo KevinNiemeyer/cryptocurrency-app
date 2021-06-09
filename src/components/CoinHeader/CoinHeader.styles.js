@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledBlock = styled.div`
+export const StyledHeader = styled.div`
   color: inherit;
   padding: 0.3em;
   border-radius: 2px;
@@ -23,6 +23,9 @@ export const Logo = styled.div`
   transition: transform 0.5s;
 `;
 
-export const pStyles = {
-  padding: '0 1em',
-};
+export const Name = styled.p`
+  padding-right: 3em;
+  color: antiquewhite;
+`;
+
+export const pStyles = {};
