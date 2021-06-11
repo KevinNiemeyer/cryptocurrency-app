@@ -21,7 +21,8 @@ export const Row = styled.div`
 `;
 
 export const StyledButton = styled.a`
-  color: ${(props) => props.fgColor};
+  color: ${(props) => props.theme.fgColor};
+  //cant get this to work right:
   /*   ${(props) =>
     props.highlight &&
     css`
