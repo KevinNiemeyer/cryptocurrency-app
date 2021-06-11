@@ -29,7 +29,6 @@ class CoinPage extends React.Component {
   render() {
     return (
       <Container>
-        {/*need to make this its own component, but not sure how routing will work*/}
         <Breadcrumb>
           <StyledLink to="/">Coins</StyledLink>
           {` > ${this.props.match.params.name}`}

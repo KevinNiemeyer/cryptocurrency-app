@@ -26,11 +26,7 @@ class App extends React.Component {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route
-                exact
-                path="/coins/:name"
-                component={(props) => <CoinPage {...props} />}
-              />
+              <Route exact path="/coins/:name" component={CoinPage} />
             </Switch>
           </div>
         </Router>
