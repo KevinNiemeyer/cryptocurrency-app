@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Header, Data } from './CoinStatsCard.styles';
+import { round } from '../../utils/math';
 
 const CoinStatsCard = (props) => {
   return (
@@ -9,16 +10,20 @@ const CoinStatsCard = (props) => {
         <Header>24 Hour Trading Vol</Header>
       </Row>
       <Row>
-        <Data>{props.marketCap}</Data>
-        <Data>test</Data>
+        <Data>${round(props.marketCap, 0)}</Data>
+        <Data>${round(props.volume24hr, 0)}</Data>
       </Row>
       <Row>
         <Header>24h Low / 24h High</Header>
         <Header>Circulating Supply</Header>
       </Row>
       <Row>
-        <Data>test</Data>
-        <Data>test</Data>
+        <Data>
+          ${round(props.high, 0)} / ${round(props.low, 0)}
+        </Data>
+        <Data>
+          {round(props.circulatingSupply, 0)} / {round(props.maxSupply, 0)}
+        </Data>
       </Row>
     </Container>
   );

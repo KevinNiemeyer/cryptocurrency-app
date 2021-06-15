@@ -8,15 +8,16 @@ export const Container = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 75% 25%;
   text-align: right;
   align-items: flex-end;
   justify-content: right;
-  margin-bottom: 0.5em;
+  margin: 0.5em;
 `;
 
 export const H1 = styled.h1`
   font-size: 2.5rem;
+  padding-right: 0.5em;
 `;
 
 export const P = styled.p`

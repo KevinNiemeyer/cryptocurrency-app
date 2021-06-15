@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 * {
-	//	outline: solid 1px yellow;
+		//outline: solid 1px yellow;
 }
 
 

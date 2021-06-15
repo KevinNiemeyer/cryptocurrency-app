@@ -11,7 +11,15 @@ class CoinStats extends React.Component {
           list={this.props.list}
           price={this.props.price}
         />
-        <CoinStatsCard list={this.props.list}></CoinStatsCard>
+        <CoinStatsCard
+          marketCap={this.props.marketCap}
+          list={this.props.list}
+          high={this.props.high24hr}
+          low={this.props.low24hr}
+          volume24hr={this.props.volume24hr}
+          circulatingSupply={this.props.circulatingSupply}
+          maxSupply={this.props.maxSupply}
+        ></CoinStatsCard>
       </Container>
     );
   }

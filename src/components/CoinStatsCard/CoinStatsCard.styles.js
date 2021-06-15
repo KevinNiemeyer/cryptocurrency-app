@@ -15,10 +15,16 @@ export const Row = styled.div`
 
 export const Header = styled.p`
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 0.8em;
+  &:first-of-type {
+    margin-right: 3.25em;
+  }
 `;
 
 export const Data = styled.p`
   margin-bottom: 1.5em;
+  &:first-of-type {
+    margin-right: 4em;
+  }
 `;
