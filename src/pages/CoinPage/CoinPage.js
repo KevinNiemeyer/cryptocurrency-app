@@ -42,6 +42,8 @@ class CoinPage extends React.Component {
         volume24hr: data.data.market_data.total_volume.usd,
         circulatingSupply: data.data.market_data.circulating_supply,
         maxSupply: data.data.market_data.max_supply,
+        isLoading: false,
+        hasError: false,
       });
     } catch {
       this.setState({ hasError: true, isLoading: false });
@@ -51,33 +53,43 @@ class CoinPage extends React.Component {
     this.getData();
   }
   render() {
+    const dataReady = !this.state.isLoading && this.state.list;
+
     return (
-      <Container>
-        <Breadcrumb>
-          <StyledLink to="/">Coins</StyledLink>
-          {` > ${this.props.match.params.name}`}
-        </Breadcrumb>
-        <Wrapper>
-          <CoinCard
-            name={this.state.name}
-            image={this.state.image.large}
-            symbol={this.state.symbol}
-            rank={this.state.rank}
-            big={true}
-          />
-          <CoinStats
-            list={this.state.list}
-            marketCap={this.state.marketCap}
-            change={this.state.change}
-            price={this.state.price}
-            high24hr={this.state.high24hr}
-            low24hr={this.state.low24hr}
-            volume24hr={this.state.volume24hr}
-            circulatingSupply={this.state.circulatingSupply}
-            maxSupply={this.state.maxSupply}
-          />
-        </Wrapper>
-      </Container>
+      <div>
+        {this.state.isLoading && <div>Loading...</div>}
+        {this.state.hasError && (
+          <div>There was a problem fetching your data..</div>
+        )}
+        {dataReady && (
+          <Container>
+            <Breadcrumb>
+              <StyledLink to="/">Coins</StyledLink>
+              {` > ${this.props.match.params.name}`}
+            </Breadcrumb>
+            <Wrapper>
+              <CoinCard
+                name={this.state.name}
+                image={this.state.image.large}
+                symbol={this.state.symbol}
+                rank={this.state.rank}
+                big={true}
+              />
+              <CoinStats
+                list={this.state.list}
+                marketCap={this.state.marketCap}
+                change={this.state.change}
+                price={this.state.price}
+                high24hr={this.state.high24hr}
+                low24hr={this.state.low24hr}
+                volume24hr={this.state.volume24hr}
+                circulatingSupply={this.state.circulatingSupply}
+                maxSupply={this.state.maxSupply}
+              />
+            </Wrapper>
+          </Container>
+        )}
+      </div>
     );
   }
 }

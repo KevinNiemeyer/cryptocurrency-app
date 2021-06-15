@@ -3,14 +3,17 @@ import { Container, Row, Header, Data } from './CoinStatsCard.styles';
 import { round } from '../../utils/math';
 
 const CoinStatsCard = (props) => {
+  const marketCap = props.list.market_data.market_cap.usd;
+
   return (
     <Container>
+      {console.log(marketCap)}
       <Row>
         <Header>Market Cap</Header>
         <Header>24 Hour Trading Vol</Header>
       </Row>
       <Row>
-        <Data>${round(props.marketCap, 0)}</Data>
+        <Data>${round(marketCap, 0)}</Data>
         <Data>${round(props.volume24hr, 0)}</Data>
       </Row>
       <Row>
