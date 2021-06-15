@@ -1,6 +1,6 @@
 import React from 'react';
 import CoinHeader from 'components/CoinHeader';
-import { LI, StyledLink } from './CoinRow.styles';
+import { StyledLink } from './CoinRow.styles';
 
 const CoinRow = (props) => {
   return (

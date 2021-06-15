@@ -4,6 +4,10 @@ import { CoinStatsHeader, CoinStatsCard } from 'components';
 
 class CoinStats extends React.Component {
   render() {
+    if (!this.props.list) {
+      return;
+    }
+    console.log(this.props.list.market_data.current_price.usd);
     return (
       <Container>
         <CoinStatsHeader

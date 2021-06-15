@@ -29,6 +29,7 @@ class CoinPage extends React.Component {
         `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
       );
       this.setState({
+        list: data.data,
         name: data.data.name,
         image: data.data.image,
         symbol: data.data.symbol,
@@ -65,6 +66,7 @@ class CoinPage extends React.Component {
             big={true}
           />
           <CoinStats
+            list={this.state.list}
             marketCap={this.state.marketCap}
             change={this.state.change}
             price={this.state.price}
