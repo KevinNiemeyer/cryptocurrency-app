@@ -1,19 +1,17 @@
 import React from 'react';
-import { Container, Row } from './CoinStatsHeader.styles';
+import { Container, Row, H1, P } from './CoinStatsHeader.styles';
 import { round } from 'utils';
 
 class CoinStatsHeader extends React.Component {
   render() {
-    console.log(this.props.list.market_data.current_price.usd);
+    //console.log(this.props.list.market_data.current_price.usd);
     return (
-      <Container style={{ color: 'white', width: '100%' }}>
+      <Container>
         <Row>
-          <p>${round(this.props.price, 2)}</p>
-          <p>?</p>
-        </Row>
-        <Row>
-          <p>?</p>
-          <p>?</p>
+          <H1>${round(this.props.price, 2)}</H1>
+          <P change={this.props.change} big={true}>
+            {round(this.props.change, 2)}%
+          </P>
         </Row>
       </Container>
     );

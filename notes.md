@@ -3,7 +3,7 @@ To Do:
 1. create home page - done
 2. create single coin page - WIP
    - create the buttons on the left side - done
-   - create the stats on the right side
+   - create the stats on the right side - WIP
 3. create search function
 4. create sort functions
 5. create loader
@@ -16,8 +16,9 @@ Global coins info:
 https://api.coingecko.com/api/v3/global
 
 questions:
-On the CoinPage, I want to implement Breadcrumbs as a component, but not sure how to implement the routing for all pages
-On the buttongroup.styles, I'm trying to use ThemeProvider on line 25, but it's not working out.
+
+- On the CoinPage, I want to implement Breadcrumbs as a component, but not sure how to implement the routing for all pages
+- How do I use a variable in the JSON data to set state? JSON returns a list, but I need a specific key out of that list based on the coin I've selected. How do I access that one value?
 
 HTML character codes:
 arrows:

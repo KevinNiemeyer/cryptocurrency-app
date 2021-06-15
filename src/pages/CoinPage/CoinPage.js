@@ -10,21 +10,30 @@ class CoinPage extends React.Component {
     image: '',
     symbol: '',
     price: 0,
+    isLoading: false,
+    hasError: false,
   };
 
   getData = async () => {
-    const data = await axios(
-      `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
-    );
-    this.setState({
-      list: data.data,
-      name: data.data.name,
-      image: data.data.image,
-      symbol: data.data.symbol,
-      rank: data.data.coingecko_rank,
-      price: data.data.market_data.current_price.usd,
-      marketCap: data.data.market_data.market_cap.usd,
-    });
+    try {
+      this.setState({ isLoading: true });
+      const data = await axios(
+        `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
+      );
+      console.log(data.data);
+      this.setState({
+        list: data.data,
+        name: data.data.name,
+        image: data.data.image,
+        symbol: data.data.symbol,
+        rank: data.data.coingecko_rank,
+        price: data.data.market_data.current_price.usd,
+        marketCap: data.data.market_data.market_cap.usd,
+        change: data.data.market_data.atl_change_percentage.xrp,
+      });
+    } catch {
+      this.setState({ hasError: true, isLoading: false });
+    }
   };
   componentDidMount() {
     this.getData();
@@ -45,7 +54,11 @@ class CoinPage extends React.Component {
             rank={this.state.rank}
             big={true}
           />
-          <CoinStats price={this.state.price} list={this.state.list} />
+          <CoinStats
+            change={this.state.change}
+            price={this.state.price}
+            list={this.state.list}
+          />
         </Wrapper>
       </Container>
     );
