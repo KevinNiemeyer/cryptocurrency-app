@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const LI = styled.li`
-  width: 100%;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+    width: 100%;
   margin: 0.5rem auto;
   background: #0d1711;
   color: #77f4d6;
@@ -17,9 +18,4 @@ export const LI = styled.li`
   }
   &:hover {
     background: #0d1711aa;
-  }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
 `;

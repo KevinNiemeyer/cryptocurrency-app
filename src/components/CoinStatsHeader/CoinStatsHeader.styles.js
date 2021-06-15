@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 2em;
 `;
 
-export const Wrapper = styled.div`
+export const Row = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
-  width: 100%;
-  color: antiquewhite;
+  grid-template-columns: 75% 25%;
+  text-align: right;
 `;

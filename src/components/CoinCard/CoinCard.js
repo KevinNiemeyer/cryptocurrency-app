@@ -6,6 +6,7 @@ const CoinCard = (props) => (
   <Container>
     <Wrapper>
       <CoinHeader
+        list={props.list}
         name={props.name}
         image={props.image}
         symbol={props.symbol}

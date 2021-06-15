@@ -1,15 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import CoinCard from 'components/CoinCard';
-import CoinStats from 'components/CoinStats';
-
+import { CoinCard, CoinStats } from 'components';
 import { Container, Breadcrumb, StyledLink, Wrapper } from './CoinPage.styles';
 
 class CoinPage extends React.Component {
   state = {
+    list: {},
     name: '',
     image: '',
     symbol: '',
+    price: 0,
   };
 
   getData = async () => {
@@ -17,10 +17,13 @@ class CoinPage extends React.Component {
       `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
     );
     this.setState({
+      list: data.data,
       name: data.data.name,
       image: data.data.image,
       symbol: data.data.symbol,
       rank: data.data.coingecko_rank,
+      price: data.data.market_data.current_price.usd,
+      marketCap: data.data.market_data.market_cap.usd,
     });
   };
   componentDidMount() {
@@ -35,12 +38,14 @@ class CoinPage extends React.Component {
         </Breadcrumb>
         <Wrapper>
           <CoinCard
+            list={this.state.list}
             name={this.state.name}
             image={this.state.image.large}
             symbol={this.state.symbol}
             rank={this.state.rank}
             big={true}
           />
+          <CoinStats price={this.state.price} list={this.state.list} />
         </Wrapper>
       </Container>
     );

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 8% 75%;
+  grid-template-columns: 15% 75%;
   align-items: center;
   gap: 0.3em;
   color: ${(props) => props.theme.secondary2};
@@ -46,8 +46,8 @@ export const StyledButton = styled.a`
   cursor: pointer;
   text-decoration: none;
   display: flex;
-  height: 1em;
-  padding: ${(props) => (props.big ? '1.1em 0.5em' : '.9em 0.4em')};
+
+  padding: ${(props) => (props.big ? '.8em 0.5em' : '.6em 0.4em')};
   align-items: center;
   border-radius: 3px;
   &:active {

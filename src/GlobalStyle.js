@@ -7,13 +7,7 @@ const GlobalStyle = createGlobalStyle`
 	//outline: solid 1px yellow;
 }
 
-:root {
-	--clr-primary:#77f4d6;
-	--clr-secondary: #003f3cff;
-	--clr-accent-primary: #75daf7;
-	--clr-special-1: #334433;
-	--clr-special-2: antiquewhite;
-}
+
 // reset:
 
 *,
