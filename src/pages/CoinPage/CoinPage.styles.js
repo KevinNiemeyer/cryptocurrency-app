@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 export const Breadcrumb = styled.div`
   width: 100%;
-  color: antiquewhite;
+  color: ${(props) => props.theme.secondary2};
   font-size: 1.2rem;
   padding: 1em 0 3em 0;
 `;

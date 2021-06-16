@@ -6,7 +6,7 @@ export const StyledLink = styled(Link)`
     width: 100%;
   margin: 0.5rem auto;
   background: #0d1711;
-  color: #77f4d6;
+  color: ${(props) => props.theme.primary1};
   width: 90%;
   padding: 1em;
   display: grid;
@@ -17,5 +17,5 @@ export const StyledLink = styled(Link)`
     transform: rotate3d(0, 1, 0, 360deg);
   }
   &:hover {
-    background: #0d1711aa;
+    background: ${(props) => props.theme.background};
 `;

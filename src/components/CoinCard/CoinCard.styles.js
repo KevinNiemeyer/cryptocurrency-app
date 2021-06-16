@@ -10,12 +10,6 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  color: antiquewhite;
+  color: ${(props) => props.theme.secondary2};
   width: 100%;
-`;
-
-export const DropDownBtn = styled.button`
-  color: ${(props) => props.color};
-  background: ${(props) => props.background};
-  width: 10em;
 `;

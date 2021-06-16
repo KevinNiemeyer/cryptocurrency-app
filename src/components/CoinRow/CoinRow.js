@@ -6,12 +6,7 @@ const CoinRow = (props) => {
   return (
     <StyledLink to={`/coins/${props.id}`}>
       <p>{props.market_cap_rank}</p>
-      <CoinHeader
-        name={props.name}
-        image={props.image}
-        symbol={props.symbol}
-        big={false}
-      />
+      <CoinHeader name={props.name} image={props.image} symbol={props.symbol} />
       <p>${props.current_price}</p>
       <p>{props.price_change_percentage_1h_in_currency}%</p>
       <p>{props.price_change_percentage_24h_in_currency}%</p>

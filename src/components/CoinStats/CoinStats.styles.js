@@ -11,5 +11,5 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  color: antiquewhite;
+  color: ${(props) => props.theme.secondary2}};
 `;

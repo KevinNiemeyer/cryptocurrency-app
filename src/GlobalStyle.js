@@ -44,7 +44,7 @@ body {
 	line-height: 1;
 	font-family: 'Helvetica';
 	color: black;
-	background: #000000ff;
+	background: ${(props) => props.theme.background2};
 	min-height: 100vh;
 }
 ol, ul {
