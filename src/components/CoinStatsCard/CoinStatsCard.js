@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Header, Data } from './CoinStatsCard.styles';
-import { round } from '../../utils/math';
+import { round } from 'utils/math';
 
 const CoinStatsCard = (props) => {
   return (
