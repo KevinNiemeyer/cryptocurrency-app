@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Home, CoinPage } from 'pages';
+import { NavBar } from 'components';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './themes';
 import GlobalStyle from './GlobalStyle';
@@ -20,7 +21,7 @@ class App extends React.Component {
       <ThemeProvider theme={themes[this.state.theme]}>
         <Router>
           <GlobalStyle />
-
+          <NavBar />
           <div>
             <Switch>
               <Route exact path="/">
