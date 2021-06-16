@@ -7,9 +7,9 @@ class CoinStatsHeader extends React.Component {
     return (
       <Container>
         <Row>
-          <H1>${round(this.props.price, 2)}</H1>
+          <H1>${round(this.props.list.market_data.current_price.usd, 2)}</H1>
           <P change={this.props.change} big={true}>
-            {round(this.props.change, 2)}%
+            {round(this.props.list.market_data.atl_change_percentage.usd, 2)}%
           </P>
         </Row>
       </Container>

@@ -3,10 +3,11 @@ To Do:
 1. create home page - done
 2. create single coin page - WIP
    - create the buttons on the left side - done
-   - create the stats on the right side - WIP
+   - create the stats on the right side - done
+   - combine the CoinStatsCard and CoinStatsHeader in the same component
 3. create search function
 4. create sort functions
-5. create loader
+5. create loader animation
 6. create 404 page
 7. create infinite scroll
 
