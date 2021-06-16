@@ -1,6 +1,5 @@
 export function round(value, numPlaces) {
-  //const rounded= Math.round(value * places) / places;
-  return Number(parseFloat(value).toFixed(2)).toLocaleString('en', {
+  return Number(parseFloat(value).toFixed(numPlaces)).toLocaleString('en', {
     minimumFractionDigits: numPlaces,
   });
 }

@@ -1,25 +1,36 @@
 import React from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { storage } from 'utils';
+import { Home, CoinPage } from 'pages';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './themes';
 import GlobalStyle from './GlobalStyle';
-import { Home } from 'pages';
 
 import './App.css';
 
+const themes = {
+  light: lightTheme,
+  dark: darkTheme,
+};
 class App extends React.Component {
+  state = {
+    theme: 'dark',
+  };
   render() {
     return (
-      <Router>
-        <GlobalStyle />
-        <div>
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <ThemeProvider theme={themes[this.state.theme]}>
+        <Router>
+          <GlobalStyle />
+
+          <div>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/coins/:name" component={CoinPage} />
+            </Switch>
+          </div>
+        </Router>
+      </ThemeProvider>
     );
   }
 }

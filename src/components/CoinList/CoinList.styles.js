@@ -15,8 +15,8 @@ export const LI = styled.li`
   width: 100%;
   margin: 0.5rem auto;
   width: 90%;
-  color: #75daf7;
-  background: Black;
+  color: ${(props) => props.theme.accent};
+  background: inherit;
   padding: 2em 1em 0.5em 1em;
   display: grid;
   grid-template-columns: 7% 12% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57% 11.57%;
