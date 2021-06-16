@@ -2,18 +2,6 @@ import React from 'react';
 import CoinHeader from 'components/CoinHeader';
 import { StyledLink } from './CoinRow.styles';
 
-/* const CoinRow = ({ id, market_cap_rank, name, image, symbol, ...rest }) => {
-  return (
-    <StyledLink to={`/coins/${id}`}>
-      <p>{market_cap_rank}</p>
-      <CoinHeader name={name} image={image} symbol={symbol} />
-      {Object.values(rest).map((value) => (
-        <p>{value}</p>
-      ))}
-      <p>Graph Coming Soon</p>
-    </StyledLink>
-  );
-}; */
 const CoinRow = (props) => {
   return (
     <StyledLink to={`/coins/${props.id}`}>
