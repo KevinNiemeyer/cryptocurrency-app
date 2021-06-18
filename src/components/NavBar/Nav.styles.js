@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Nav = styled.div`
+  position: sticky;
   width: 100%;
   height: 5em;
   color: ${(props) => props.theme.secondary2};
@@ -36,8 +37,9 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${(props) => props.theme.secondary2};
   &:first-of-type {
-    margin-right: 2em;
+    margin-right: 3em;
   }
+  margin-right: 3em;
   &:hover {
     color: ${(props) => props.theme.accent};
   }
@@ -51,4 +53,8 @@ export const SearchInput = styled.input`
   outline: none;
   border: solid 0.5px ${(props) => props.theme.accent2};
   color: ${(props) => props.theme.secondary2};
+`;
+
+export const Logo = styled.img`
+  margin-bottom: 1.5em;
 `;
