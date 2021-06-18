@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { round } from 'utils';
 import { CoinRow } from 'components';
+import { getAllCoins } from '../../store/coinList/coinListActions';
 import { UL, LI, P, Container } from './CoinList.styles';
 
 class CoinList extends React.Component {
@@ -11,7 +12,7 @@ class CoinList extends React.Component {
     isLoading: false,
     hasError: false,
   };
-  getData = async () => {
+  getAllCoins = async () => {
     try {
       this.setState({ isLoading: true });
 
@@ -25,18 +26,20 @@ class CoinList extends React.Component {
     }
   };
   componentDidMount() {
-    this.getData();
+    console.log(this.props);
+    //this.getAllCoins();
+    this.props.getAllCoins();
   }
 
   render() {
-    const { coinList, isLoading } = this.state;
+    //const { coinList, isLoading, hasError } = this.state;
+    const { coinList, isLoading, hasError } = this.props.coinList;
     const dataReady = !this.state.isLoading && this.state.coinList;
-    //const { coinList, isLoading } = this.props.coinList;
     console.log(dataReady);
     return (
       <Container>
         {isLoading && <div style={{ color: 'white' }}>Loading...</div>}
-        {dataReady && (
+        {true && (
           <UL>
             <LI>
               <P>Rank</P>
@@ -97,7 +100,10 @@ class CoinList extends React.Component {
 
 const mapStateToProps = (state) => ({
   //state is the entire redux store
-
   coinList: state.coinList,
 });
-export default connect(mapStateToProps)(CoinList);
+
+const mapDispatchToProps = {
+  getAllCoins,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CoinList);
