@@ -6,3 +6,4 @@ export { default as ButtonGroup } from './ButtonGroup';
 export { default as CoinStats } from './CoinStats';
 export { default as CoinStatsHeader } from './CoinStatsHeader';
 export { default as CoinStatsCard } from './CoinStatsCard';
+export { default as NavBar } from './NavBar';
