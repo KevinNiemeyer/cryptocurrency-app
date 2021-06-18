@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { round } from 'utils';
 import { CoinRow } from 'components';
 import { UL, LI, P, Container } from './CoinList.styles';
@@ -20,7 +21,9 @@ class CoinList extends React.Component {
   }
 
   render() {
-    const { coinList } = this.state;
+    //const { coinList } = this.state;
+    const { coinList } = this.props.coinList;
+    console.log(this.props);
     return (
       <Container>
         <UL>
@@ -80,4 +83,8 @@ class CoinList extends React.Component {
   }
 }
 
-export default CoinList;
+const mapStateToProps = (state) => ({
+  //state is the entire redux store
+  coinList: state.coinList,
+});
+export default connect(mapStateToProps)(CoinList);
