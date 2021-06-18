@@ -32,7 +32,9 @@ class CoinPage extends React.Component {
     const dataReady = !this.state.isLoading && this.state.list;
     return (
       <Container>
-        {this.state.isLoading && <div>Loading...</div>}
+        {this.state.isLoading && (
+          <div style={{ color: 'white' }}>Loading...</div>
+        )}
         {dataReady && (
           <div>
             <Breadcrumb>

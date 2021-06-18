@@ -35,7 +35,7 @@ class CoinList extends React.Component {
     console.log(dataReady);
     return (
       <Container>
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <div style={{ color: 'white' }}>Loading...</div>}
         {dataReady && (
           <UL>
             <LI>
