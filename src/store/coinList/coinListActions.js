@@ -10,7 +10,7 @@ export const getAllCoins = () => async (dispatch, state) => {
     );
     dispatch({
       type: 'COINLIST_FETCH_ALL_COINS_SUCCESS',
-      payload: data,
+      payload: data.data,
     });
   } catch (err) {
     dispatch({
