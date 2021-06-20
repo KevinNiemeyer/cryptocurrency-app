@@ -16,6 +16,8 @@ To Do:
 
 Questions:
 
+- how do I implement hasError? (see coinPageActions)
+  Old questions:
 - On the CoinPage, I want to implement Breadcrumbs as a component, but not sure how to implement the routing for all pages
 - How do I use a variable in the JSON data to set state? JSON returns a list, but I need a specific key out of that list based on the coin I've selected. How do I access that one value?
 

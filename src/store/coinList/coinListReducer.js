@@ -1,7 +1,6 @@
 const initialState = {
   coinList: [],
   sLoading: false,
-  hasError: false,
 };
 
 function coinListReducer(state = initialState, action) {

@@ -4,11 +4,13 @@ import { compose, combineReducers, createStore, applyMiddleware } from 'redux';
 //createStore is the globalized state
 import thunk from 'redux-thunk';
 import coinList from './coinList/coinListReducer'; //default export. "coinList" can be any name you want; also can import multiple reducers
+import coinData from './coinPage/coinPageReducer';
 const reducers = combineReducers({
   coinList,
+  coinData,
   // can also rename: listOfCoins: coinList
 });
-
+console.log(reducers);
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({

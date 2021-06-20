@@ -1,11 +1,13 @@
 import React from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import { connect } from 'react-redux';
 import { CoinCard, CoinStats } from 'components';
+import { getCoinData } from '../../store/coinPage/coinPageActions';
 import { Container, Breadcrumb, StyledLink, Wrapper } from './CoinPage.styles';
 
 class CoinPage extends React.Component {
-  state = {
-    list: null,
+  /* state = {
+    coinData: null,
     isLoading: false,
     hasError: false,
   };
@@ -17,25 +19,28 @@ class CoinPage extends React.Component {
         `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
       );
       this.setState({
-        list: data.data,
+        coinData: data.data,
         isLoading: false,
         hasError: false,
       });
     } catch {
       this.setState({ hasError: true, isLoading: false });
     }
-  };
+  }; */
+
   componentDidMount() {
-    this.getData();
+    //this.getData();
+    this.props.getCoinData();
   }
+
   render() {
-    const dataReady = !this.state.isLoading && this.state.list;
+    console.log('props: ', this.props.coinData); //coinData isn't getting passed to props
+    const { coinData, isLoading } = this.props.coinData;
+    const dataReady = !isLoading && coinData;
     return (
       <Container>
-        {this.state.isLoading && (
-          <div style={{ color: 'white' }}>Loading...</div>
-        )}
-        {dataReady && (
+        {isLoading && <div style={{ color: 'white' }}>Loading...</div>}
+        {dataReady && ( //how to implement dataReady here
           <div>
             <Breadcrumb>
               <StyledLink to="/">Coins</StyledLink>
@@ -43,8 +48,8 @@ class CoinPage extends React.Component {
             </Breadcrumb>
 
             <Wrapper>
-              <CoinCard list={this.state.list} />
-              <CoinStats list={this.state.list} />
+              <CoinCard list={coinData} />
+              <CoinStats list={coinData} />
             </Wrapper>
           </div>
         )}
@@ -53,4 +58,11 @@ class CoinPage extends React.Component {
   }
 }
 
-export default CoinPage;
+const mapStateToProps = (state) => ({
+  coinData: state.coinData,
+});
+
+const mapDispatchToProps = {
+  getCoinData,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CoinPage);

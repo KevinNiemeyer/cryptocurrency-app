@@ -7,7 +7,7 @@ import { getAllCoins } from '../../store/coinList/coinListActions';
 import { UL, LI, P, Container } from './CoinList.styles';
 
 class CoinList extends React.Component {
-  state = {
+  /* state = {
     coinList: null,
     isLoading: false,
     hasError: false,
@@ -24,22 +24,21 @@ class CoinList extends React.Component {
     } catch {
       this.setState({ hasError: true, isLoading: false });
     }
-  };
+  }; */
+
   componentDidMount() {
     //this.getAllCoins();
     this.props.getAllCoins();
   }
 
   render() {
-    //const { coinList, isLoading, hasError } = this.state;
-    const { coinList, isLoading, hasError } = this.props.coinList;
+    const { coinList, isLoading } = this.props.coinList;
+    const dataReady = !isLoading && coinList;
     console.log(coinList);
-    const dataReady = !this.state.isLoading && this.state.coinList;
-    console.log(dataReady);
     return (
       <Container>
         {isLoading && <div style={{ color: 'white' }}>Loading...</div>}
-        {true && (
+        {dataReady && ( //how do I implement dataReady here?
           <UL>
             <LI>
               <P>Rank</P>
