@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { round } from 'utils';
 import { CoinRow } from 'components';
@@ -7,38 +6,17 @@ import { getAllCoins } from '../../store/coinList/coinListActions';
 import { UL, LI, P, Container } from './CoinList.styles';
 
 class CoinList extends React.Component {
-  /* state = {
-    coinList: null,
-    isLoading: false,
-    hasError: false,
-  };
-  getAllCoins = async () => {
-    try {
-      this.setState({ isLoading: true });
-
-      const data = await axios(
-        `${process.env.REACT_APP_API_ENDPOINT}coins/markets?vs_currency=USD&order=market_cap_desc&per_page=25&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C`
-      );
-
-      this.setState({ coinList: data.data, isLoading: false, hasError: false });
-    } catch {
-      this.setState({ hasError: true, isLoading: false });
-    }
-  }; */
-
   componentDidMount() {
-    //this.getAllCoins();
     this.props.getAllCoins();
   }
 
   render() {
     const { coinList, isLoading } = this.props.coinList;
     const dataReady = !isLoading && coinList;
-    console.log(coinList);
     return (
       <Container>
         {isLoading && <div style={{ color: 'white' }}>Loading...</div>}
-        {dataReady && ( //how do I implement dataReady here?
+        {dataReady && (
           <UL>
             <LI>
               <P>Rank</P>
@@ -98,7 +76,6 @@ class CoinList extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  //state is the entire redux store
   coinList: state.coinList,
 });
 

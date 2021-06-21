@@ -10,7 +10,6 @@ const reducers = combineReducers({
   coinData,
   // can also rename: listOfCoins: coinList
 });
-console.log(reducers);
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
