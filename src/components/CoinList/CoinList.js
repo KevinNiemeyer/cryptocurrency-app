@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { round } from 'utils';
 import { CoinRow } from 'components';
 import { getAllCoins } from '../../store/coinList/coinListActions';
 import { UL, LI, P, Container } from './CoinList.styles';
@@ -30,43 +29,7 @@ class CoinList extends React.Component {
               <P>Last 7 Days</P>
             </LI>
             {coinList.map((coin) => {
-              const {
-                id,
-                symbol,
-                name,
-                market_cap,
-                current_price,
-                image,
-                price_change_percentage_1h_in_currency,
-                price_change_percentage_24h_in_currency,
-                price_change_percentage_7d_in_currency,
-                total_volume,
-                market_cap_rank,
-                url,
-              } = coin;
-              const currentPrice = round(current_price, 2);
-              const pcp1h = round(price_change_percentage_1h_in_currency, 1);
-              const pcp24h = round(price_change_percentage_24h_in_currency, 1);
-              const pcp7d = round(price_change_percentage_7d_in_currency, 1);
-              const totalVolume = round(total_volume, 0);
-              const marketCap = round(market_cap, 0);
-              return (
-                <CoinRow
-                  key={symbol}
-                  id={id}
-                  symbol={symbol}
-                  name={name}
-                  market_cap={marketCap}
-                  current_price={currentPrice}
-                  price_change_percentage_24h_in_currency={pcp24h}
-                  price_change_percentage_1h_in_currency={pcp1h}
-                  price_change_percentage_7d_in_currency={pcp7d}
-                  total_volume={totalVolume}
-                  image={image}
-                  market_cap_rank={market_cap_rank}
-                  url={url}
-                />
-              );
+              return <CoinRow key={coin.symbol} {...coin} />;
             })}
           </UL>
         )}
