@@ -4,7 +4,6 @@ import { StyledLink } from './CoinRow.styles';
 import { round } from '../../utils/math';
 
 const CoinRow = (props) => {
-  console.log(props);
   return (
     <StyledLink to={`/coins/${props.id}`}>
       <p>{props.market_cap_rank}</p>

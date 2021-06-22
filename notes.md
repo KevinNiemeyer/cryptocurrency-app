@@ -57,3 +57,6 @@ render(
 
   <Form />
 );
+
+camel case video
+https://www.loom.com/share/430b1f48c2af42218df762568faf777b
