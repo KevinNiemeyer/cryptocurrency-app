@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toCamelCase } from '../../utils/format';
 import {
   COINPAGE_FETCH_COIN_DATA_PENDING,
   COINPAGE_FETCH_COIN_DATA_SUCCESS,
@@ -10,12 +11,12 @@ export const getCoinData = (coin) => async (dispatch, state) => {
     dispatch({
       type: COINPAGE_FETCH_COIN_DATA_PENDING,
     });
-    const data = await axios(
+    const { data } = await axios(
       `${process.env.REACT_APP_API_ENDPOINT}coins/${coin}`
     );
     dispatch({
       type: COINPAGE_FETCH_COIN_DATA_SUCCESS,
-      payload: data.data,
+      payload: data.map(toCamelCase),
     });
   } catch (err) {
     dispatch({

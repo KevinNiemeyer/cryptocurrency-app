@@ -20,7 +20,7 @@ function coinListReducer(state = initialState, action) {
     case COINLIST_FETCH_ALL_COINS_SUCCESS:
       return {
         ...state,
-        coinList: [...state.coinList, ...action.payload], //we're not changing all of state, just coinList, so that's why we had to spread the rest of state
+        coinList: [...state.coinList, ...action.payload],
         isLoading: false,
         hasError: false,
       };

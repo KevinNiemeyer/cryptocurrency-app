@@ -11,6 +11,7 @@ class CoinList extends React.Component {
 
   render() {
     const { coinList, isLoading } = this.props.coinList;
+
     const dataReady = !isLoading && coinList;
     return (
       <Container>
