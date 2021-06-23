@@ -1,14 +1,7 @@
 import React from 'react';
+import Form from 'components/Form';
 
-import {
-  Nav,
-  Wrapper,
-  Form,
-  Links,
-  StyledLink,
-  SearchInput,
-  Logo,
-} from './Nav.styles';
+import { Nav, Wrapper, Links, StyledLink, Logo } from './Nav.styles';
 
 import logo from '../../images/Applicoin.png';
 const NavBar = () => {
@@ -21,9 +14,7 @@ const NavBar = () => {
           <StyledLink>Portofolio</StyledLink>
         </Links>
         <Logo src={logo} alt="logo" />
-        <Form>
-          <SearchInput placeholder="Search" />
-        </Form>
+        <Form />
       </Wrapper>
     </Nav>
   );

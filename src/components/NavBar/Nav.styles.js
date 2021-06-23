@@ -27,12 +27,6 @@ export const Links = styled.section`
   font-size: 1.2rem;
 `;
 
-export const Form = styled.form`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-`;
-
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${(props) => props.theme.secondary2};
@@ -43,16 +37,6 @@ export const StyledLink = styled(Link)`
   &:hover {
     color: ${(props) => props.theme.accent};
   }
-`;
-
-export const SearchInput = styled.input`
-  width: 50%;
-  font-size: 1.5rem;
-  padding: 0.5em;
-  background: ${(props) => props.theme.background2};
-  outline: none;
-  border: solid 0.5px ${(props) => props.theme.accent2};
-  color: ${(props) => props.theme.secondary2};
 `;
 
 export const Logo = styled.img`
