@@ -1,38 +1,20 @@
 import React from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 import { CoinCard, CoinStats } from 'components';
+import { getCoinData } from '../../store/coinPage/coinPageActions';
 import { Container, Breadcrumb, StyledLink, Wrapper } from './CoinPage.styles';
 
 class CoinPage extends React.Component {
-  state = {
-    list: null,
-    isLoading: false,
-    hasError: false,
-  };
-
-  getData = async () => {
-    try {
-      this.setState({ isLoading: true });
-      const data = await axios(
-        `${process.env.REACT_APP_API_ENDPOINT}coins/${this.props.match.params.name}`
-      );
-      this.setState({
-        list: data.data,
-        isLoading: false,
-        hasError: false,
-      });
-    } catch {
-      this.setState({ hasError: true, isLoading: false });
-    }
-  };
   componentDidMount() {
-    this.getData();
+    this.props.getCoinData(this.props.match.params.name);
   }
+
   render() {
-    const dataReady = !this.state.isLoading && this.state.list;
+    const { coinData, isLoading } = this.props.coinData;
+    const dataReady = !isLoading && coinData;
     return (
       <Container>
-        {this.state.isLoading && <div>Loading...</div>}
+        {isLoading && <div style={{ color: 'white' }}>Loading...</div>}
         {dataReady && (
           <div>
             <Breadcrumb>
@@ -41,8 +23,8 @@ class CoinPage extends React.Component {
             </Breadcrumb>
 
             <Wrapper>
-              <CoinCard list={this.state.list} />
-              <CoinStats list={this.state.list} />
+              <CoinCard coinData={coinData} />
+              <CoinStats coinData={coinData} />
             </Wrapper>
           </div>
         )}
@@ -50,5 +32,11 @@ class CoinPage extends React.Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  coinData: state.coinData,
+});
 
-export default CoinPage;
+const mapDispatchToProps = {
+  getCoinData,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CoinPage);

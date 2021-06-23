@@ -6,13 +6,13 @@ const CoinCard = (props) => (
   <Container>
     <Wrapper>
       <CoinHeader
-        name={props.list.name}
-        image={props.list.image.large}
-        symbol={props.list.symbol}
+        name={props.coinData.name}
+        image={props.coinData.image.large}
+        symbol={props.coinData.symbol}
         big
       />
     </Wrapper>
-    <ButtonGroup rank={props.list.coingecko_rank} />
+    <ButtonGroup rank={props.coinData.coingecko_rank} />
   </Container>
 );
 

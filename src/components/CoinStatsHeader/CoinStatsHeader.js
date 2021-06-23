@@ -4,12 +4,13 @@ import { round } from 'utils';
 
 class CoinStatsHeader extends React.Component {
   render() {
+    console.log(this.props.coinData);
     return (
       <Container>
         <Row>
-          <H1>${round(this.props.list.market_data.current_price.usd, 2)}</H1>
+          <H1>${round(this.props.coinData.marketData.currentPrice.usd, 2)}</H1>
           <P change={this.props.change} big={true}>
-            {round(this.props.list.market_data.atl_change_percentage.usd, 2)}%
+            {round(this.props.coinData.marketData.atlChangePercentage.usd, 2)}%
           </P>
         </Row>
       </Container>

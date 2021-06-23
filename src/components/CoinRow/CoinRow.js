@@ -1,18 +1,19 @@
 import React from 'react';
 import CoinHeader from 'components/CoinHeader';
 import { StyledLink } from './CoinRow.styles';
+import { round } from '../../utils/math';
 
 const CoinRow = (props) => {
   return (
     <StyledLink to={`/coins/${props.id}`}>
-      <p>{props.market_cap_rank}</p>
+      <p>{props.marketCapRank}</p>
       <CoinHeader name={props.name} image={props.image} symbol={props.symbol} />
-      <p>${props.current_price}</p>
-      <p>{props.price_change_percentage_1h_in_currency}%</p>
-      <p>{props.price_change_percentage_24h_in_currency}%</p>
-      <p>{props.price_change_percentage_7d_in_currency}%</p>
-      <p>${props.total_volume}</p>
-      <p>${props.market_cap}</p>
+      <p>${round(props.currentPrice, 2)}</p>
+      <p>{round(props.priceChangePercentage1HInCurrency, 1)}%</p>
+      <p>{round(props.priceChangePercentage24HInCurrency, 1)}%</p>
+      <p>{round(props.priceChangePercentage7DInCurrency, 1)}%</p>
+      <p>${round(props.totalVolume, 0)}</p>
+      <p>${round(props.marketCap, 0)}</p>
       <p>Graph Coming Soon</p>
     </StyledLink>
   );
