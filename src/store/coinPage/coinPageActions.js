@@ -11,13 +11,15 @@ export const getCoinData = (coin) => async (dispatch, state) => {
     dispatch({
       type: COINPAGE_FETCH_COIN_DATA_PENDING,
     });
+
     const { data } = await axios(
       `${process.env.REACT_APP_API_ENDPOINT}coins/${coin}`
     );
     dispatch({
       type: COINPAGE_FETCH_COIN_DATA_SUCCESS,
-      payload: data.map(toCamelCase),
+      payload: toCamelCase(data),
     });
+    console.log(data);
   } catch (err) {
     dispatch({
       type: COINPAGE_FETCH_COIN_DATA_ERROR,

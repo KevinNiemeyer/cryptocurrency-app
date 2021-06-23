@@ -24,7 +24,6 @@ function coinPageReducer(state = initialState, action) {
         isLoading: false,
         hasError: false,
       };
-
     case COINPAGE_FETCH_COIN_DATA_ERROR:
       return {
         ...state,

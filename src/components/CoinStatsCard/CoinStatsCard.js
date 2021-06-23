@@ -10,8 +10,8 @@ const CoinStatsCard = (props) => {
         <Header>24 Hour Trading Vol</Header>
       </Row>
       <Row>
-        <Data>${round(props.list.market_data.market_cap.usd, 0)}</Data>
-        <Data>${round(props.list.market_data.total_volume.usd, 0)}</Data>
+        <Data>${round(props.coinData.marketData.market_cap.usd, 0)}</Data>
+        <Data>${round(props.coinData.marketData.total_volume.usd, 0)}</Data>
       </Row>
       <Row>
         <Header>24h Low / 24h High</Header>

@@ -23,8 +23,8 @@ class CoinPage extends React.Component {
             </Breadcrumb>
 
             <Wrapper>
-              <CoinCard list={coinData} />
-              <CoinStats list={coinData} />
+              <CoinCard coinData={coinData} />
+              <CoinStats coinData={coinData} />
             </Wrapper>
           </div>
         )}
