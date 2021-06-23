@@ -6,8 +6,8 @@ class CoinStats extends React.Component {
   render() {
     return (
       <Container>
-        <CoinStatsHeader coinData />
-        <CoinStatsCard coinData />
+        <CoinStatsHeader coinData={this.props.coinData} />
+        <CoinStatsCard coinData={this.props.coinData} />
       </Container>
     );
   }
