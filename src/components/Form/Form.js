@@ -47,6 +47,7 @@ class Form extends React.Component {
 
   render() {
     //const { coins, isLoading, hasError } = this.props.coinList;
+    console.log(this.props);
     const { inputValue, showDropdown, filteredCoins } = this.state;
     return (
       <Container onSubmit={this.handleSubmit}>
