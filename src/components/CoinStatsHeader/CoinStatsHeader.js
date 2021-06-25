@@ -4,7 +4,6 @@ import { round } from 'utils';
 
 class CoinStatsHeader extends React.Component {
   render() {
-    console.log(this.props.coinData);
     return (
       <Container>
         <Row>

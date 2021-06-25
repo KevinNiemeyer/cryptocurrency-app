@@ -1,4 +1,5 @@
 function storage(type, key, data) {
+  console.log(key);
   if (type === 'set') {
     window.localStorage.setItem(key, JSON.stringify(data));
   } else if (type === 'get') {

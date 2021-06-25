@@ -19,7 +19,6 @@ export const getCoinData = (coin) => async (dispatch, state) => {
       type: COINPAGE_FETCH_COIN_DATA_SUCCESS,
       payload: toCamelCase(data),
     });
-    console.log(data);
   } catch (err) {
     dispatch({
       type: COINPAGE_FETCH_COIN_DATA_ERROR,
