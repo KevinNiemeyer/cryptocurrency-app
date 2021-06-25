@@ -6,7 +6,7 @@ import {
   COINLIST_FETCH_ALL_COINS_ERROR,
 } from './coinListReducer';
 
-export const getAllCoins = (id) => async (dispatch, state) => {
+export const getAllCoins = () => async (dispatch, state) => {
   try {
     dispatch({
       type: COINLIST_FETCH_ALL_COINS_PENDING,

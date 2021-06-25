@@ -9,6 +9,12 @@ export function toCamelCase(obj) {
   return obj;
 }
 
+export function toLowerCase(data) {
+  const newList = data.map((coinName) => {
+    return coinName.toLowerCase();
+  });
+  return newList;
+}
 /* export function toCamelCase(object) {
   const newObject = Object.entries(object).reduce((acc, keyValue) => {
     const [key, value] = keyValue;

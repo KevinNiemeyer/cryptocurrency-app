@@ -3,7 +3,8 @@
 import React from 'react';
 import storage from 'utils/storage';
 import { withRouter } from 'react-router';
-
+import { connect } from 'react-redux';
+import { getSearchData } from '../../store/search/searchActions';
 import { Container, SearchInput, Dropdown, StyledLink } from './Form.styles';
 
 class Form extends React.Component {
@@ -17,7 +18,8 @@ class Form extends React.Component {
   inputRef = React.createRef();
 
   componentDidMount() {
-    this.setState({ allCoins: storage('get', 'coins') });
+    // this.setState({ allCoins: storage('get', 'coins') });
+    this.props.getSearchData();
   }
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value });
@@ -44,6 +46,7 @@ class Form extends React.Component {
   };
 
   render() {
+    //const { coins, isLoading, hasError } = this.props.coinList;
     const { inputValue, showDropdown, filteredCoins } = this.state;
     return (
       <Container onSubmit={this.handleSubmit}>
@@ -65,10 +68,11 @@ class Form extends React.Component {
   }
 }
 
-export default withRouter(Form);
+const mapStateToProps = (state) => ({
+  coins: state.coins,
+});
 
-/* {
-   allCoins.filter((coin) => {
-     return coin.includes(inputValue) && <StyledLink>{coin}</StyledLink>;
-   });
- } */
+const mapDispatchToProps = {
+  getSearchData,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
