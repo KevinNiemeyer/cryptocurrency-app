@@ -5,9 +5,11 @@ import { compose, combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import coinList from './coinList/coinListReducer'; //default export. "coinList" can be any name you want; also can import multiple reducers
 import coinData from './coinPage/coinPageReducer';
+import searchData from './search/searchReducer';
 const reducers = combineReducers({
   coinList,
   coinData,
+  searchData,
   // can also rename: listOfCoins: coinList
 });
 const composeEnhancers =

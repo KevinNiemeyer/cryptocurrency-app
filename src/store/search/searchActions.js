@@ -14,9 +14,12 @@ export const getSearchData = () => async (dispatch, state) => {
     const { data } = await axios(
       `${process.env.REACT_APP_API_ENDPOINT}coins/list`
     );
+    const coinNames = Object.entries(data).map((coin) => {
+      return coin[1]['name'];
+    });
     dispatch({
       type: SEARCH_FETCH_COIN_DATA_SUCCESS,
-      payload: data.map(toCamelCase),
+      payload: coinNames,
     });
   } catch (err) {
     dispatch({

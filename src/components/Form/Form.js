@@ -1,7 +1,6 @@
 //can search by name, symbol, or id
 
 import React from 'react';
-import storage from 'utils/storage';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { getSearchData } from '../../store/search/searchActions';
@@ -11,23 +10,25 @@ class Form extends React.Component {
   state = {
     inputValue: '',
     searchTerm: '',
-    allCoins: [],
     filteredCoins: [],
     showDropdown: false,
   };
+
   inputRef = React.createRef();
 
   componentDidMount() {
-    // this.setState({ allCoins: storage('get', 'coins') });
     this.props.getSearchData();
   }
+
   handleChange = (e) => {
-    this.setState({ inputValue: e.target.value });
+    console.log(e);
+    this.setState({ showDropdown: true });
     this.setState({
-      filteredCoins: this.state.allCoins.filter((coin) => {
+      filteredCoins: this.props.searchData.coinNames.filter((coin) => {
         return coin.includes(this.state.inputValue);
       }),
     });
+    this.setState({ inputValue: e.target.value });
   };
   handleEnter = (e) => {
     this.inputRef.current.focus(e);
@@ -39,16 +40,18 @@ class Form extends React.Component {
   };
 
   handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({ showDropdown: false });
-    this.props.history.push(`/coins/${this.state.inputValue.toLowerCase()}`);
     this.setState({ inputValue: '' });
+    this.setState({ showDropdown: false });
+    this.props.history.push(
+      `/coins/${this.state.filteredCoins[0].toLowerCase()}`
+    );
   };
 
   render() {
-    //const { coins, isLoading, hasError } = this.props.coinList;
-    console.log(this.props);
-    const { inputValue, showDropdown, filteredCoins } = this.state;
+    const { coins, isLoading } = this.props.searchData;
+    console.log(this.state.filteredCoins);
+    const dataReady = !isLoading && coins;
+    const { inputValue, showDropdown } = this.state;
     return (
       <Container onSubmit={this.handleSubmit}>
         <SearchInput
@@ -59,21 +62,25 @@ class Form extends React.Component {
           value={inputValue}
           placeholder="Search"
         />
-        <Dropdown showDropdown={showDropdown}>
-          {filteredCoins.map((coin) => {
-            return <StyledLink onClick={this.handleSubmit}>{coin}</StyledLink>;
-          })}
-        </Dropdown>
+        {true && (
+          <Dropdown showDropdown={showDropdown}>
+            {this.state.filteredCoins.map((coinName) => {
+              return (
+                <StyledLink onClick={this.handleSubmit}>{coinName}</StyledLink>
+              );
+            })}
+          </Dropdown>
+        )}
       </Container>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  coins: state.coins,
+  searchData: state.searchData,
 });
 
 const mapDispatchToProps = {
   getSearchData,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form));

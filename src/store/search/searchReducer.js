@@ -1,5 +1,5 @@
 const initialState = {
-  coins: [],
+  coinNames: [],
   isLoading: false,
   hasError: false,
 };
@@ -18,7 +18,7 @@ function searchReducer(state = initialState, action) {
     case SEARCH_FETCH_COIN_DATA_SUCCESS:
       return {
         ...state,
-        coins: { ...state.coins, ...action.payload },
+        coinNames: [...state.coinNames, ...action.payload],
         isLoading: false,
         hasError: false,
       };
